@@ -1,0 +1,103 @@
+BANK MANAGEMENT SYSTEM - RUN GUIDE
+=================================
+
+Prerequisites
+-------------
+1. Java JDK installed (Java 17+ recommended, Java 24 works)
+   Check:
+     java --version
+     javac --version
+
+2. MySQL Server installed and running
+3. Database and tables already created
+4. Internet NOT required after setup
+
+------------------------------------------------------------
+
+Project Structure (Important)
+-----------------------------
+BankManagementSystem
+│
+├── src/        -> Java source files
+├── bin/        -> Compiled .class files
+├── lib/        -> External JARs (mysql, jcalendar)
+├── assets/     -> Images (must be inside bin/assets)
+└── run.txt     -> This file
+
+------------------------------------------------------------
+
+Step 1: Open Project Directory
+------------------------------
+Open Command Prompt / PowerShell and go to project root:
+
+  cd C:\MAHESH\BankManagementSystem
+
+------------------------------------------------------------
+
+Step 2: Compile the Project
+---------------------------
+Run the following command:
+
+  javac -d bin -cp "lib/*" src/bank/management/system/*.java
+
+Notes:
+- This compiles all Java files
+- Output (.class files) will be generated in the bin folder
+- Warnings can be ignored
+
+------------------------------------------------------------
+
+Step 3: Copy Assets (IMPORTANT)
+-------------------------------
+Make sure images are available at runtime:
+
+  xcopy src\assets bin\assets /E /I
+
+------------------------------------------------------------
+
+Step 4: Run the Application
+---------------------------
+Run the LOGIN screen (main entry point):
+
+  java -cp "bin;lib/*" bank.management.system.Login
+
+(Optional)
+Run MainClass directly:
+
+  java -cp "bin;lib/*" bank.management.system.MainClass
+
+------------------------------------------------------------
+
+Database Notes
+--------------
+- Ensure MySQL server is running
+- Check Conn.java for:
+  - Database name
+  - Username
+  - Password
+
+To view existing users:
+  SELECT * FROM login;
+
+------------------------------------------------------------
+
+Common Errors & Fixes
+--------------------
+1. ClassNotFoundException
+   -> Compile project again (Step 2)
+
+2. Images not loading
+   -> Ensure bin/assets exists (Step 3)
+
+3. Login fails
+   -> Check MySQL connection and login table
+
+------------------------------------------------------------
+
+Project Status
+--------------
+✔ Java Swing Application
+✔ MySQL Database Connected
+✔ Ready to Run
+
+------------------------------------------------------------
