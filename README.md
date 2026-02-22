@@ -124,11 +124,6 @@ c = DriverManager.getConnection(
 
 ------------------------------------------------------------------------
 
-## 📸 Screenshots
-
-(Add application screenshots inside the `screenshots` folder.)
-
-------------------------------------------------------------------------
 
 ## 🚀 Future Improvements
 
